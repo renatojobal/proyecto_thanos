@@ -1,8 +1,9 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 class CharactersPage extends React.Component { 
   render() { 
-    return (<div> This is the CharactersPage</div>);
+    return (<div><Navbar/> This is the CharactersPage</div>);
   }
 
 
