@@ -1,17 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
 
+const Container = styled.div`
+  border: 1px solid red;
+  width: 200px;
+  height: 300px;
+`
 
-import Modal from "./Modal";
-
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
 
 class CharacterContainer extends React.Component {
 
   render() {
     return (
-      <div><Link to={Modal}>
-      <img src={this.props.imageURL} alt="character"></img>
-      </Link></div>
+      <Container>
+        <Image src={this.props.imageURL} alt="character"></Image>
+      </Container>
     );
   }
 }

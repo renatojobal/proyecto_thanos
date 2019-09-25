@@ -7,13 +7,16 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,5 +32,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "babel-loader": "^8.0.6"
   }
 }
