@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CharactersPage from "./CharactersPage";
 import ComicsPage from "./ComicsPage";
 
+
 function App() {
   return (
     <BrowserRouter>
