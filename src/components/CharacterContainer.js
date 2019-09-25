@@ -17,7 +17,9 @@ class CharacterContainer extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container onClick={() => {
+        if(this.props.onClick) this.props.onClick(this.props.imageURL);
+      }}>
         <Image src={this.props.imageURL} alt="character"></Image>
       </Container>
     );
