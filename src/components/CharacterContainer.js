@@ -25,7 +25,7 @@ class CharacterContainer extends React.Component {
       </Container>
     );
   }
-}
+} 
 
 CharacterContainer.PropTypes = {
   imageURL:  PropTypes.string,
