@@ -1,6 +1,7 @@
 import React from "react";
 import ComicContainer from "../src/components/ComicContainer";
 import ComicList from "../src/components/ComicList";
+import ComicsPage from "../src/components/ComicsPage";
 
 export default {
   title: "Comic"
@@ -45,3 +46,9 @@ export const comicList = () => {
 
   return <ComicList comicList={comics} />;
 };
+
+
+export const comicPage = () => { 
+
+  return (<ComicsPage />);
+}
