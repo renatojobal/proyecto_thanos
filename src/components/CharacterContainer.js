@@ -1,10 +1,11 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   border: 1px solid red;
-  width: 200px;
-  height: 300px;
+  width: 175px;
+  height: 275px;
 `
 
 const Image = styled.img`
@@ -26,4 +27,9 @@ class CharacterContainer extends React.Component {
   }
 }
 
+CharacterContainer.PropTypes = {
+  imageURL:  PropTypes.string,
+};
+
 export default CharacterContainer;
+

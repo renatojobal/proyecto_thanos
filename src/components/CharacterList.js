@@ -1,12 +1,13 @@
 import React from "react";
 import CharacterContainer from './CharacterContainer'
 import styled from 'styled-components'
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   display: grid;
   align-items: center;
-  grid-gap: 30px;
-  grid-template-columns: 200px 200px 200px;
+  grid-gap: 20px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
 `
 
 class CharacterList extends React.Component {
@@ -28,5 +29,10 @@ class CharacterList extends React.Component {
     );
   }
 }
+
+CharacterList.PropTypes = {
+  images : PropTypes.array,
+  image: PropTypes.string, 
+};
 
 export default CharacterList;

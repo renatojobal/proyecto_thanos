@@ -17,9 +17,16 @@ export const character = () => {
 
 export const characterList = () => {
 
+
   const images = [
     'https://static1.abc.es/media/play/2019/04/27/thanos-kTmB--620x349@abc.jpg',
-    'https://wipy.tv/wp-content/uploads/2019/06/Thanos-destruyo%CC%81-Me%CC%81xico.jpg'
+    'https://wipy.tv/wp-content/uploads/2019/06/Thanos-destruyo%CC%81-Me%CC%81xico.jpg',
+    'https://gothamotaku.com/wp-content/uploads/2019/01/Estatua-Thanos-28-cm.-Los-Vengadores.-ARTFX.-Marvel-Universe.-Kotobukiya-2.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/51t3MiD3YEL.jpg',
+    'https://dqzrr9k4bjpzk.cloudfront.net/images/12324587/814322871.jpg',
+    'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/0/06/Thanos.png/revision/latest/scale-to-width-down/350?cb=20190518194500&path-prefix=es',
+    'https://cdn.shopify.com/s/files/1/0466/0421/products/6_7a94e3ad-9595-4575-a7cc-ac780371ce45_900x.jpg?v=1556427945',
+    'http://edicollector.com/wp-content/uploads/2018/04/Marvel-Avengers-Infinity-War-Thanos-Hot-Toys-Edicollector-03.jpg'
   ]
 
   return (
