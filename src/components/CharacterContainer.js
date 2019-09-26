@@ -24,6 +24,6 @@ class CharacterContainer extends React.Component {
       </Container>
     );
   }
-}
+} 
 
 export default CharacterContainer;
