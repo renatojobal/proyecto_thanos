@@ -30,9 +30,9 @@ class CharacterList extends React.Component {
   }
 }
 
-CharacterList.PropTypes = {
+CharacterList.propTypes = {
   images : PropTypes.array,
-  image: PropTypes.string, 
+  image: PropTypes.string,
 };
 
 export default CharacterList;
