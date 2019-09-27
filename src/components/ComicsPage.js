@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 
+import Loading from "./Loading";
+
 
 import ComicList from "./ComicList";
 
@@ -35,10 +37,10 @@ class ComicsPage extends React.Component {
   };
 
   render() {
-    if (this.loading) {
+    if (this.state.loading) {
       // * Renderizar el componente loading
-      return <div>Loading...</div>;
-    } else if (this.error) {
+      return (<Loading/>);
+    } else if (this.state.error) {
       // * Renderizar un mensaje o componente de error
       return <div>Error</div>;
     } else {
