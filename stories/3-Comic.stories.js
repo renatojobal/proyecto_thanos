@@ -2,6 +2,7 @@ import React from "react";
 import ComicContainer from "../src/components/ComicContainer";
 import ComicList from "../src/components/ComicList";
 import ComicsPage from "../src/components/ComicsPage";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default {
   title: "Comic"
