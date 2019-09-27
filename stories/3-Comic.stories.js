@@ -7,6 +7,7 @@ export default {
   title: "Comic"
 };
 
+
 export const comicContainer = () => {
   return (
     <ComicContainer
@@ -15,6 +16,7 @@ export const comicContainer = () => {
     />
   );
 };
+
 
 export const comicList = () => {
   const comics = [
@@ -47,8 +49,3 @@ export const comicList = () => {
   return <ComicList comicList={comics} />;
 };
 
-
-export const comicPage = () => { 
-
-  return (<ComicsPage />);
-}

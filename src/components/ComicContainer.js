@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import "bootstrap/dist/css/bootstrap.css";
 
-const Container = styled.div`
-  width: 1000rm;
-  height: 300px;
-`;
 
 const Image = styled.img`
   width: 200px;
