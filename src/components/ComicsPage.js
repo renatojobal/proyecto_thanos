@@ -1,6 +1,12 @@
 import React from "react";
 import Navbar from "./Navbar";
 
+<<<<<<< HEAD
+=======
+import Loading from "./Loading";
+
+
+>>>>>>> origin/development
 import ComicList from "./ComicList";
 
 class ComicsPage extends React.Component {
@@ -55,9 +61,15 @@ class ComicsPage extends React.Component {
   };
 
   render() {
+<<<<<<< HEAD
     if (!this.state.loading) {
       // * Renderizar el componente loading
       return <div>Loading...</div>;
+=======
+    if (this.state.loading) {
+      // * Renderizar el componente loading
+      return (<Loading/>);
+>>>>>>> origin/development
     } else if (this.state.error) {
       // * Renderizar un mensaje o componente de error
       return <div>Error</div>;
