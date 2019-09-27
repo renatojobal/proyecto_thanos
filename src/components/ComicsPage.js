@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-
 import ComicList from "./ComicList";
 
 class ComicsPage extends React.Component {
@@ -19,7 +18,7 @@ class ComicsPage extends React.Component {
   }
 
   componentWillUnmount() {
-    // Limpiamos el proceso asincorno que se estaba realizando 
+    // Limpiamos el proceso asincorno que se estaba realizando
     clearInterval(this.intervalId);
   }
 
@@ -27,18 +26,39 @@ class ComicsPage extends React.Component {
     this.setState({ loading: true, error: null });
 
     try {
-      const comics = []; // ! Justo aqui se debe llamar a la api
-      this.setState({ loading: false, comics: comics });
+      fetch(
+        "https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=7a0963902eb142154809d5cc40c93339&hash=c229dbb1995825313cb754f16b2ca602"
+      )
+        .then(response => response.json())
+        .then(comicJson =>
+          this.setState({ comics: comicJson.data.results, loading: false })
+        );
+
+      const comicsMap = this.state.comics;
+      const comics = [];
+
+      comicsMap.map(comic =>
+        comics.push({
+          imageURL: comic.thumbnail.path + "." + comic.thumbnail.extension,
+          description: comic.description
+        })
+      );
+
+      this.setState({
+        loading: false,
+        comics: comics
+      });
+
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
 
   render() {
-    if (this.loading) {
+    if (!this.state.loading) {
       // * Renderizar el componente loading
       return <div>Loading...</div>;
-    } else if (this.error) {
+    } else if (this.state.error) {
       // * Renderizar un mensaje o componente de error
       return <div>Error</div>;
     } else {
@@ -46,12 +66,11 @@ class ComicsPage extends React.Component {
       return (
         <div>
           <Navbar />
-          <ComicList comics={this.comics} />
+          <ComicList comics={this.state.comics} />
         </div>
       );
     }
   }
 }
-
 
 export default ComicsPage;
