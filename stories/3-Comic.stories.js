@@ -2,10 +2,12 @@ import React from "react";
 import ComicContainer from "../src/components/ComicContainer";
 import ComicList from "../src/components/ComicList";
 import ComicsPage from "../src/components/ComicsPage";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default {
   title: "Comic"
 };
+
 
 export const comicContainer = () => {
   return (
@@ -15,6 +17,7 @@ export const comicContainer = () => {
     />
   );
 };
+
 
 export const comicList = () => {
   const comics = [
@@ -47,8 +50,3 @@ export const comicList = () => {
   return <ComicList comicList={comics} />;
 };
 
-
-export const comicPage = () => { 
-
-  return (<ComicsPage />);
-}
