@@ -1,57 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
+import ReactDOM from 'react-dom';
+import "bootstrap/dist/css/bootstrap.css";
 
-class Modal extends React.Component {
+class Modal extends Component {
   render() {
-    return (
+    const node = (
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModalCenter"
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalCenterTitle">
                 Modal title
               </h5>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <div class="container">
-                <div class="row">
-                  <div class="col-3">
-                    Primera fila primera columna
-                  </div>
-                  <div class="col-9">
-                    Primera fila segunda columna
-                  </div>
+            <div className="modal-body">
+              <div className="container">
+                <div className="row">
+                  <div className="col-3">Primera fila primera columna</div>
+                  <div className="col-9">Primera fila segunda columna</div>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    Segunda fila segeunda columna
-                  </div>
+                <div className="row">
+                  <div className="col">Segunda fila segeunda columna</div>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-dismiss="modal"
+                onClick={this.props.onClose}
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">
+              <button type="button" className="btn btn-primary">
                 Save changes
               </button>
             </div>
@@ -59,7 +56,31 @@ class Modal extends React.Component {
         </div>
       </div>
     );
+    return ReactDOM.createPortal(node, document.getElementById('modal-root'));
   }
 }
 
-export default Modal;
+class modal extends Component {
+  state = { isModalOpen: false };
+
+  _openModal = () => this.setState({ isModalOpen: true });
+
+  _closeModal = () => this.setState({ isModalOpen: false });
+
+  render() {
+    return (
+      <div>
+        <button
+          onClick={this._openModal}
+        >
+          Modal de prueba
+        </button>
+        {this.state.isModalOpen && 
+          <Modal onClose={this._closeModal}/>
+        }
+      </div>
+    );
+  }
+}
+
+export default modal;

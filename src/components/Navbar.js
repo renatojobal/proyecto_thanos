@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css";
 
 class Navbar extends React.Component {
     render() {
@@ -11,9 +12,9 @@ class Navbar extends React.Component {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className="nav-item nav-link active" to="/">Logo <span className="sr-only">(current)</span></Link>
-                        <Link className="nav-item nav-link" to="/">Comics</Link>
-                        <Link className="nav-item nav-link" to="/characters">Characters</Link>
+                        <a aclassName="nav-item nav-link active" to="/">Logo <span className="sr-only">(current)</span></a>
+                        <a className="nav-item nav-link" to="/">Comics</a>
+                        <a className="nav-item nav-link" to="/characters">Characters</a>
                     </div>
                 </div>
             </nav>
