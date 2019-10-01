@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ComicContainer from "./ComicContainer";
+
+
 class ComicList extends React.Component {
   render() {
     let leftImage = true;
