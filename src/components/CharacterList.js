@@ -8,9 +8,15 @@ class CharacterList extends React.Component {
       // RENDERIZAR LAS IMAGENES
       return (
         <div className="container">
-          {this.props.characters.map((character) => {
-            return <CharacterContainer imageURL={character.imageURL} />;
-          })}
+          <div className="row">
+            {this.props.characters.map((character) => {
+              return (
+                <div className="col-2">
+                  <CharacterContainer imageURL={character.imageURL} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       );
     } else {

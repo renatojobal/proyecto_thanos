@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Container = styled.div`
-  border: 1px solid red;
   width: 175px;
   height: 275px;
 `;
