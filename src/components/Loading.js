@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+
+  display: block;
   position:fixed;
   width:300px;
   height:200px;
@@ -11,15 +13,19 @@ const Container = styled.div`
   margin-top:-100px;
 `;
 
+const Span = styled.span`
+  font-weight: bold;
+`;
+
 class Loading extends React.Component {
   render() {
     return (
       <Container>
         <img
-          src="https://media.tenor.com/images/4c1a56a0afbfd977c6be1267fc1ff183/tenor.gif        "
+          src="https://media.tenor.com/images/4c1a56a0afbfd977c6be1267fc1ff183/tenor.gif"
           alt="EL thunas bailando"
         ></img>
-        <span>Loading...</span>
+        <center><Span>Loading...</Span></center>
       </Container>
     );
   }
