@@ -18,7 +18,6 @@ class CharactersPage extends React.Component {
     this.fetchData();
   }
 
-
   // * Función asíncrona para cargar los datos
   fetchData = async () => {
     this.setState({ loading: true, error: null });
@@ -31,9 +30,9 @@ class CharactersPage extends React.Component {
       const results = await prevData.data.results;
 
       // * Agregamos todos los datos en un array de objetos json
-      let comics = [];
+      let characters = [];
       results.map((result) =>
-        comics.push({
+        characters.push({
           imageURL: result.thumbnail.path + "." + result.thumbnail.extension,
           description: result.description
         })
@@ -42,14 +41,12 @@ class CharactersPage extends React.Component {
       // * Guardamos los datos en el estad del componente
       this.setState({
         loading: false,
-        comics: comics
+        characters: characters
       });
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
-
-
 
   render() {
     if (this.state.loading) {
