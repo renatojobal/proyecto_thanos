@@ -35,6 +35,6 @@ class ComicList extends React.Component {
   }
 }
 ComicList.protoType = {
-  comicList: PropTypes.array
+  comics: PropTypes.array
 };
 export default ComicList;
