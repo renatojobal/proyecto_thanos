@@ -12,8 +12,11 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  width:500px;
-  height:600px;
+  width:450px;
+  height:250px;
+`;
+const Span = styled.span`
+  font-weight: bold;
 `;
 
 class NotFound extends React.Component {
@@ -24,7 +27,7 @@ class NotFound extends React.Component {
           src="https://tenor.com/view/thanos-avengers-infinity-war-sorry-gif-12454554.gif"
           alt="perdoname niñita"
         ></Image>
-        <span>No Encontrado...</span>
+        <center><Span>No Encontrado...</Span></center>
       </Container>
     );
   }

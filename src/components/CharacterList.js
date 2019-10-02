@@ -1,5 +1,6 @@
 import React from "react";
 import CharacterContainer from './CharacterContainer'
+import Modal from './Modal'
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
 
@@ -13,15 +14,13 @@ const Container = styled.div`
 class CharacterList extends React.Component {
   render() {
 
-    const { images = [] } = this.props;
-
     return (
       <Container>
-        {images.map(image => {
+        {this.props.characters.map(image => {
           return (
             <CharacterContainer
-              imageURL={image}
-              onClick={() => console.log(image)}
+              imageURL={image.imageURL}
+              onClick={() => <Modal/>}
             />
           )
         })}
