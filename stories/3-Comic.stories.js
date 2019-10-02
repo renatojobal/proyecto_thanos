@@ -1,4 +1,4 @@
-import React from "react";
+bimport React from "react";
 import ComicContainer from "../src/components/ComicContainer";
 import ComicList from "../src/components/ComicList";
 import "bootstrap/dist/css/bootstrap.css";

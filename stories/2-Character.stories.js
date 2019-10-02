@@ -1,37 +1,83 @@
-import React from 'react';
-import CharacterContainer from '../src/components/CharacterContainer'
-import CharacterList from '../src/components/CharacterList'
+import React from "react";
+import CharacterContainer from "../src/components/CharacterContainer";
+import CharacterList from "../src/components/CharacterList";
 
 export default {
-  title: 'Character',
+  title: "Character"
 };
 
-export const character = () => {
+export const characterContainer = () => {
   return (
     <CharacterContainer
-      imageURL='data:image/jpeg;base64,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'
-      onClick={(url) => console.log(url)}
+      imageURL="https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948"
+      description="Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
     />
-  )
-}
+  );
+};
 
 export const characterList = () => {
+  const characters = [
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    },
+    {
+      imageURL:
+        "https://imgc.allpostersimages.com/img/print/posters/marvel-comics-retro-the-x-men-comic-book-cover-no-100-professor-x_a-G-13758639-13198931.jpg?w=632&h=948",
+      description:
+        "Los X-Men, también conocidos como Patrulla-X en España1​ y Hombres X en Hispanoamérica, son un equipo de superhéroes ficticios que aparecen en los cómics estadounidenses publicados por Marvel Comics. Creado por el artista / coautor Jack Kirby y el escritor Stan Lee, los personajes aparecieron por primera vez en The X-Men # 1 (septiembre de 1963)2​y formaron una de las franquicias más reconocidas y exitosas de Marvel Comics, apareciendo en numerosos libros y programas de televisión, películas y videojuegos. El éxito de esta franquicia es tan enorme que la segunda colección de los mutantes, cuya andadura comenzó en 1991 bajo el título de X-Men (obviando The Uncanny delante del nombre) se convirtió en el cómic más vendido de todos los tiempos, y un spin-off titulado X-Force en el segundo cómic con mayores ventas."
+    }
+  ];
 
-
-  const images = [
-    'https://static1.abc.es/media/play/2019/04/27/thanos-kTmB--620x349@abc.jpg',
-    'https://wipy.tv/wp-content/uploads/2019/06/Thanos-destruyo%CC%81-Me%CC%81xico.jpg',
-    'https://gothamotaku.com/wp-content/uploads/2019/01/Estatua-Thanos-28-cm.-Los-Vengadores.-ARTFX.-Marvel-Universe.-Kotobukiya-2.jpg',
-    'https://images-na.ssl-images-amazon.com/images/I/51t3MiD3YEL.jpg',
-    'https://dqzrr9k4bjpzk.cloudfront.net/images/12324587/814322871.jpg',
-    'https://vignette.wikia.nocookie.net/marvelcinematicuniverse/images/0/06/Thanos.png/revision/latest/scale-to-width-down/350?cb=20190518194500&path-prefix=es',
-    'https://cdn.shopify.com/s/files/1/0466/0421/products/6_7a94e3ad-9595-4575-a7cc-ac780371ce45_900x.jpg?v=1556427945',
-    'http://edicollector.com/wp-content/uploads/2018/04/Marvel-Avengers-Infinity-War-Thanos-Hot-Toys-Edicollector-03.jpg'
-  ]
-
-  return (
-    <CharacterList
-      images={images}
-    />
-  )
-}
+  return <CharacterList characters={characters} />;
+};

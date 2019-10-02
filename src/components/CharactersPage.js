@@ -1,25 +1,23 @@
 import React from "react";
 import Navbar from "./Navbar";
+
 import Loading from "./Loading";
 import CharacterList from "./CharacterList";
 
 class CharactersPage extends React.Component {
+
 
   state = {
     loading: true,
     error: null,
     characters: undefined
   };
+
   componentDidMount() {
     // Aqui se debe llenar la variable 'comics' con un array
     this.fetchData();
-    // this.intervalId = setInterval(this.fetchData, 5000);
   }
 
-  // componentWillUnmount() {
-  //   Limpiamos el proceso asincorno que se estaba realizando
-  //   clearInterval(this.intervalId);
-  // }
 
   // * Función asíncrona para cargar los datos
   fetchData = async () => {
@@ -40,6 +38,7 @@ class CharactersPage extends React.Component {
           description: result.description
         })
       );
+
 
       // * Guardamos los datos en el estad del componente
       this.setState({
