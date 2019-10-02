@@ -8,8 +8,14 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const Description = styled.div`
-  align-content: center;
+
+const Container = styled.div`
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 `;
 
 class ComicContainer extends React.Component {
@@ -22,9 +28,9 @@ class ComicContainer extends React.Component {
               <Image src={this.props.imageURL} alt="Imagen"></Image>
             </div>
             <div className="col-9 offset-1">
-              <Description>
+              <Container>
                 <p> {this.props.description} </p>
-              </Description>
+              </Container>
             </div>
           </div>
         </div>
@@ -34,9 +40,9 @@ class ComicContainer extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-9">
-              <Description>
+              <Container>
                 <p> {this.props.description} </p>
-              </Description>
+              </Container>
             </div>
             <div className="col-2  offset-1">
               <Image src={this.props.imageURL} alt="Imagen"></Image>
