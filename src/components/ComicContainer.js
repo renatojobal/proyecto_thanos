@@ -3,45 +3,70 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Image = styled.img`
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
+  width: 250px;
+  height: 350px;
+  display:block;
 `;
 
-const Description = styled.div`
-  align-content: center;
+// Colores:
+// Rojo = #e62429
+// Negro = #202020
+// "Roboto","Trebuchet MS",Helvetica,Arial,sans-serif
+
+const ContainerRight = styled.div`
+  background-color: #202020;
+  color: #ffffff;
+  font-family: "Roboto ","Trebuchet MS",Helvetica,Arial,sans-serif;
+  font-size: 1.2em;
+
 `;
+
+const ContainerLeft = styled.div`
+  background-color: #e62429;
+  font-family: "Roboto ","Trebuchet MS",Helvetica,Arial,sans-serif;
+  font-size: 1.2em;
+`;
+
+const Container = styled.div`
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+`;
+
 
 class ComicContainer extends React.Component {
   render() {
     if (this.props.leftImage) {
       return (
         <div className="container">
-          <div className="row">
+          <ContainerRight className="row">
             <div className="col-2">
               <Image src={this.props.imageURL} alt="Imagen"></Image>
             </div>
             <div className="col-9 offset-1">
-              <Description>
+              <Container>
                 <p> {this.props.description} </p>
-              </Description>
+              </Container>
             </div>
-          </div>
+          </ContainerRight>
         </div>
       );
     } else {
       return (
         <div className="container">
-          <div className="row">
+          <ContainerLeft className="row">
             <div className="col-9">
-              <Description>
+              <Container>
                 <p> {this.props.description} </p>
-              </Description>
+              </Container>
             </div>
-            <div className="col-2  offset-1">
+            <div className="col-2">
               <Image src={this.props.imageURL} alt="Imagen"></Image>
             </div>
-          </div>
+          </ContainerLeft>
         </div>
       );
     }
