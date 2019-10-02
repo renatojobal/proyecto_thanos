@@ -1,4 +1,5 @@
 import React from "react";
+
 import CharacterContainer from "./CharacterContainer";
 import PropTypes from "prop-types";
 

@@ -1,11 +1,11 @@
 import React from "react";
 import Navbar from "./Navbar";
-import CharacterList from "./CharacterList";
+
 import Loading from "./Loading";
+import CharacterList from "./CharacterList";
 
 class CharactersPage extends React.Component {
-  //  **No borrar el link**
-  //  "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7a0963902eb142154809d5cc40c93339&hash=c229dbb1995825313cb754f16b2ca602"
+
 
   state = {
     loading: true,
@@ -18,13 +18,14 @@ class CharactersPage extends React.Component {
     this.fetchData();
   }
 
+
   // * Función asíncrona para cargar los datos
   fetchData = async () => {
     this.setState({ loading: true, error: null });
     try {
       // * Llamamos a la api
       const response = await fetch(
-        "https://gateway.marvel.com:443/v1/public/comics?ts=1&apikey=7a0963902eb142154809d5cc40c93339&hash=c229dbb1995825313cb754f16b2ca602"
+        "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=7a0963902eb142154809d5cc40c93339&hash=c229dbb1995825313cb754f16b2ca602"
       );
       const prevData = await response.json();
       const results = await prevData.data.results;
@@ -37,6 +38,7 @@ class CharactersPage extends React.Component {
           description: result.description
         })
       );
+
 
       // * Guardamos los datos en el estad del componente
       this.setState({
