@@ -11,20 +11,21 @@ const Image = styled.img`
 // Colores:
 // Rojo = #e62429
 // Negro = #202020
+// "Roboto","Trebuchet MS",Helvetica,Arial,sans-serif
 
 const ContainerRight = styled.div`
   background-color: #202020;
-  
   color: #ffffff;
+  font-family: "Roboto ","Trebuchet MS",Helvetica,Arial,sans-serif;
+  font-size: 1.2em;
 
 `;
 
 const ContainerLeft = styled.div`
   background-color: #e62429;
+  font-family: "Roboto ","Trebuchet MS",Helvetica,Arial,sans-serif;
+  font-size: 1.2em;
 `;
-
-
-
 
 const Container = styled.div`
   text-align: center;
@@ -34,6 +35,7 @@ const Container = styled.div`
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 `;
+
 
 class ComicContainer extends React.Component {
   render() {

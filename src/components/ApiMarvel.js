@@ -21,4 +21,5 @@ class ApiMarvel {
        )
    }
 }
+
 export default ComicContainer;
