@@ -3,10 +3,27 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Image = styled.img`
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
+  width: 250px;
+  height: 350px;
+  display:block;
 `;
+
+// Colores:
+// Rojo = #e62429
+// Negro = #202020
+
+const ContainerRight = styled.div`
+  background-color: #202020;
+  
+  color: #ffffff;
+
+`;
+
+const ContainerLeft = styled.div`
+  background-color: #e62429;
+`;
+
+
 
 
 const Container = styled.div`
@@ -23,7 +40,7 @@ class ComicContainer extends React.Component {
     if (this.props.leftImage) {
       return (
         <div className="container">
-          <div className="row">
+          <ContainerRight className="row">
             <div className="col-2">
               <Image src={this.props.imageURL} alt="Imagen"></Image>
             </div>
@@ -32,22 +49,22 @@ class ComicContainer extends React.Component {
                 <p> {this.props.description} </p>
               </Container>
             </div>
-          </div>
+          </ContainerRight>
         </div>
       );
     } else {
       return (
         <div className="container">
-          <div className="row">
+          <ContainerLeft className="row">
             <div className="col-9">
               <Container>
                 <p> {this.props.description} </p>
               </Container>
             </div>
-            <div className="col-2  offset-1">
+            <div className="col-2">
               <Image src={this.props.imageURL} alt="Imagen"></Image>
             </div>
-          </div>
+          </ContainerLeft>
         </div>
       );
     }
