@@ -19,7 +19,7 @@ function Modal(props) {
         alignItems: "center",
         backgroundColor: "rgba(0,0,0,0.3)"
       }}
-      onClick={this.props.onCloseModal}
+      onClick={props.onCloseModal}
     >
       <div
         style={{
@@ -35,9 +35,8 @@ function Modal(props) {
           justifySelf: "center"
         }}
       >
-        {this.props.children}
         <hr />
-        <button onClick={this.props.onClose}>Close</button>
+        <button onClick={props.onCloseModal}>Close</button>
       </div>
     </div>,
     document.getElementById("modal-root")
