@@ -24,10 +24,6 @@ class CharacterContainer extends React.Component {
           alt="character"
           onClick={this.props.onOpenModal}
         ></Image>
-        <Modal
-          isModalOpen={this.props.isModalOpen}
-          onCloseModal={this.props.onCloseModal}
-        />
       </Container>
     );
   }
