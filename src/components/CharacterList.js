@@ -7,13 +7,18 @@ class CharacterList extends React.Component {
   render() {
     if (this.props.characters) {
       // RENDERIZAR LAS IMAGENES
-      return (
+      return (  
         <div className="container">
           <div className="row">
-            {this.props.characters.map((character) => {
+            {this.props.characters.map((character, i) => {
               return (
-                <div className="col-2">
-                  <CharacterContainer imageURL={character.imageURL} />
+                <div className="col-2" key={i}>
+                  <CharacterContainer
+                    imageURL={character.imageURL}
+                    isModalOpen={this.props.isModalOpen}
+                    onCloseModal={this.props.onCloseModal}
+                    onOpenModal={this.props.onOpenModal}
+                  />
                 </div>
               );
             })}
