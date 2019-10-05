@@ -3,13 +3,11 @@ import React from "react";
 import CharacterContainer from "./CharacterContainer";
 import PropTypes from "prop-types";
 
-import Modal from "./Modal";
-
 class CharacterList extends React.Component {
   render() {
     if (this.props.characters) {
       // RENDERIZAR LAS IMAGENES
-      return (
+      return (  
         <div className="container">
           <div className="row">
             {this.props.characters.map((character, i) => {
@@ -20,10 +18,6 @@ class CharacterList extends React.Component {
                     isModalOpen={this.props.isModalOpen}
                     onCloseModal={this.props.onCloseModal}
                     onOpenModal={this.props.onOpenModal}
-                  />
-                  <Modal
-                    isModalOpen={this.props.isModalOpen}
-                    onCloseModal={this.props.onCloseModal}
                   />
                 </div>
               );
