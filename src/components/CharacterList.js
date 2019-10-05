@@ -15,8 +15,6 @@ class CharacterList extends React.Component {
                 <div className="col-2" key={i}>
                   <CharacterContainer
                     imageURL={character.imageURL}
-                    isModalOpen={this.props.isModalOpen}
-                    onCloseModal={this.props.onCloseModal}
                     onOpenModal={this.props.onOpenModal}
                   />
                 </div>

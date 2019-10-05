@@ -3,13 +3,16 @@ import Navbar from "./Navbar";
 
 import Loading from "./Loading";
 import CharacterList from "./CharacterList";
+import Modal from "./Modal";
 
 class CharactersPage extends React.Component {
   state = {
     loading: true,
     error: null,
     characters: undefined,
-    isModalOpen: false
+    isModalOpen: false,
+    imageURL: undefined,
+    description: undefined
   };
 
   componentDidMount() {
@@ -18,14 +21,23 @@ class CharactersPage extends React.Component {
   }
 
   // * Funciones para controlar el modal
-  handleOpenModal = (event) => { 
-    console.log("object")
-    this.setState({isModalOpen: true})
-  }
+  handleOpenModal = (imageURL, description) => {
+    console.log("object");
 
-  handleCloseModal = (event) => { 
-    this.setState({isModalOpen: false})
-  }
+    this.setState({
+      isModalOpen: true,
+      imageURL: imageURL,
+      description: description
+    });
+  };
+
+  handleCloseModal = (event) => {
+    this.setState({
+      isModalOpen: false,
+      imageURL: undefined,
+      description: undefined
+    });
+  };
 
   // * Función asíncrona para cargar los datos
   fetchData = async () => {
@@ -71,9 +83,13 @@ class CharactersPage extends React.Component {
           <Navbar />
           <CharacterList
             characters={this.state.characters}
+            onOpenModal={this.handleOpenModal}
+          />
+          <Modal
             isModalOpen={this.state.isModalOpen}
             onCloseModal={this.handleCloseModal}
-            onOpenModal={this.handleOpenModal}
+            imageURL={this.state.imageURL}
+            descripton={this.state.description}
           />
         </div>
       );

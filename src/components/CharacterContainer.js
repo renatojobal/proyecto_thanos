@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import Modal from "./Modal";
+
 
 const Container = styled.div`
   width: 175px;
@@ -24,10 +24,6 @@ class CharacterContainer extends React.Component {
           alt="character"
           onClick={this.props.onOpenModal}
         ></Image>
-        <Modal
-          isModalOpen={this.props.isModalOpen}
-          onCloseModal={this.props.onCloseModal}
-        />
       </Container>
     );
   }
