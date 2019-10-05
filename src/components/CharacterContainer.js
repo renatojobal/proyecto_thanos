@@ -22,7 +22,7 @@ class CharacterContainer extends React.Component {
         <Image
           src={this.props.imageURL}
           alt="character"
-          onClick={this.props.onOpenModal}
+          onClick={() => this.props.onOpenModal(this.props.imageURL, this.props.description)}
         ></Image>
       </Container>
     );

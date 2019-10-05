@@ -15,7 +15,8 @@ class CharacterList extends React.Component {
                 <div className="col-2" key={i}>
                   <CharacterContainer
                     imageURL={character.imageURL}
-                    onOpenModal={this.props.onOpenModal}
+                    description={character.description}
+                    onOpenModal={(imageURL, description) => this.props.onOpenModal(imageURL, description)}
                   />
                 </div>
               );

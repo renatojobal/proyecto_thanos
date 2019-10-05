@@ -21,23 +21,21 @@ class CharactersPage extends React.Component {
   }
 
   // * Funciones para controlar el modal
-  handleOpenModal = (imageURL, description) => {
-    console.log("object");
-
+  handleOpenModal(imageURL, description) {
     this.setState({
       isModalOpen: true,
       imageURL: imageURL,
       description: description
     });
-  };
+  }
 
-  handleCloseModal = (event) => {
+  handleCloseModal() {
     this.setState({
       isModalOpen: false,
       imageURL: undefined,
       description: undefined
     });
-  };
+  }
 
   // * Función asíncrona para cargar los datos
   fetchData = async () => {
@@ -83,11 +81,13 @@ class CharactersPage extends React.Component {
           <Navbar />
           <CharacterList
             characters={this.state.characters}
-            onOpenModal={this.handleOpenModal}
+            onOpenModal={(imageURL, description) =>
+              this.handleOpenModal(imageURL, description)
+            }
           />
           <Modal
             isModalOpen={this.state.isModalOpen}
-            onCloseModal={this.handleCloseModal}
+            onCloseModal={() => this.handleCloseModal()}
             imageURL={this.state.imageURL}
             descripton={this.state.description}
           />

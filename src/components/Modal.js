@@ -37,9 +37,18 @@ class Modal extends React.Component {
             }}
           >
             <hr />
-            <img src={this.props.imageURL} alt="Character"></img>
-            <p>{this.props.description}</p>
-            <button onClick={this.props.onCloseModal}>Close</button>
+            <div className="container">
+              <div className="row">
+                <div className="col-3">
+                  <img src={this.props.imageURL} alt="Character"></img>
+                </div>
+                <div className="col-9">
+                  <p>{this.props.description}</p>
+                </div>
+              </div>
+            </div>
+
+            <button onClick={() => this.props.onCloseModal()}>Close</button>
           </div>
         </div>,
         document.getElementById("modal-root")
