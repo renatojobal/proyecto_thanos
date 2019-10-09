@@ -6,6 +6,8 @@ class Modal extends React.Component {
     if (!this.props.isModalOpen) {
       return null;
     } else {
+      console.log(this.props.imageURL);
+      console.log(this.props.description);
       return ReactDOM.createPortal(
         <div
           style={{
@@ -40,7 +42,15 @@ class Modal extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-3">
-                  <img src={this.props.imageURL} alt="Character"></img>
+                  <img
+                    src={this.props.imageURL}
+                    style={{
+                      width: "250px",
+                      height: "350px",
+                      display: "block"
+                    }}
+                    alt="Character"
+                  ></img>
                 </div>
                 <div className="col-9">
                   <p>{this.props.description}</p>
@@ -48,7 +58,12 @@ class Modal extends React.Component {
               </div>
             </div>
 
-            <button onClick={() => this.props.onCloseModal()}>Close</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => this.props.onCloseModal()}
+            >
+              Close
+            </button>
           </div>
         </div>,
         document.getElementById("modal-root")
